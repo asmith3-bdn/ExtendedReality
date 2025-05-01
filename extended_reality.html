@@ -5,13 +5,31 @@
     <meta name="description" content="Getting Started with VR">
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.x/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
     <a-scene>
-        <a-sky color="#000"></a-sky>
-        <a-sphere id="sphere1" position="0 1.25 -5" radius="1.25" color="#42f"></a-sphere>
+        <!-- <a-box src="https://i.imgur.com/mYmmbrp.jpg" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-box> -->
+        <a-box id="box1" src="https://i.imgur.com/NpeCAOw.jpeg" position="0 2 -5" rotation="0 45 45" scale="2 2 2"
+animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
+animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
+animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"></a-box>
+
+        <a-sky src="https://c02.purpledshub.com/uploads/sites/48/2023/02/why-sky-blue-2db86ae.jpg"></a-sky>
+        <a-plane src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg" rotation="-90 0 0" width="30" height="30" repeat="10 10"> </a-plane>
+        <!-- Out of the box environment! -->
+        <!-- <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> -->
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="1" position="2 4 4"></a-light>
+
+        <a-camera>
+            <a-cursor color="red"></a-cursor>
+        </a-camera>
+       
     </a-scene>
-    
+
+   
+      
     <a-entity
         text="value: Hello, Virtual Reality!; color: #BBB"
         position="-0.9 0.2 -3"
